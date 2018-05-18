@@ -12,6 +12,10 @@ exports.homePage = (req, res) => {
   res.render('index')
 }
 
+exports.addStore = (req, res) => {
+  res.render('editStore', { title: 'Add Store' })
+}
+
 // this is my export to play with
 // not part of the exercise
 exports.timeStamp = (req, res) => {

@@ -8,6 +8,8 @@ const storeController = require('../controllers/storeController')
 
 router.get('/', storeController.homePage)
 
+router.get('/add', storeController.addStore)
+
 // get for url+/reverse/'name parameter'
 router.get('/reverse/:name', (req, res) => {
   const reverse = [...req.params.name].reverse().join('')
@@ -18,6 +20,6 @@ router.get('/reverse/:name', (req, res) => {
   })
 })
 
-router.get('/timestamp/', storeController.timeStamp)
+router.get('/tags/', storeController.timeStamp)
 
 module.exports = router
