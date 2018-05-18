@@ -4,7 +4,9 @@ const storeController = require('../controllers/storeController')
 
 // Do work here
 // the first param is the url, the second will be the file that does the work
-router.get('/', storeController.myMiddleware, storeController.homePage)
+// router.get('/', storeController.myMiddleware, storeController.homePage)
+
+router.get('/', storeController.homePage)
 
 // get for url+/reverse/'name parameter'
 router.get('/reverse/:name', (req, res) => {
