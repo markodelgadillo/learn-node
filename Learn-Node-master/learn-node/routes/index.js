@@ -9,6 +9,7 @@ const storeController = require('../controllers/storeController')
 router.get('/', storeController.homePage)
 
 router.get('/add', storeController.addStore)
+router.post('/add', storeController.createStore)
 
 // get for url+/reverse/'name parameter'
 router.get('/reverse/:name', (req, res) => {

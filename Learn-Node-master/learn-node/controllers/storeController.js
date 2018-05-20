@@ -16,6 +16,11 @@ exports.addStore = (req, res) => {
   res.render('editStore', { title: 'Add Store' })
 }
 
+exports.createStore = (req, res) => {
+  console.log(req.body)
+  res.json(req.body)
+}
+
 // this is my export to play with
 // not part of the exercise
 exports.timeStamp = (req, res) => {
