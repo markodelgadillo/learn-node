@@ -7,6 +7,9 @@
 //   next()
 // }
 
+const mongoose = require('mongoose')
+const Store = mongoose.model('Store')
+
 exports.homePage = (req, res) => {
   console.log(req.name)
   res.render('index')
@@ -17,8 +20,16 @@ exports.addStore = (req, res) => {
 }
 
 exports.createStore = (req, res) => {
-  console.log(req.body)
-  res.json(req.body)
+  const store = new Store(req.body)
+  store
+    .save()
+    .then(store => {
+      res.json(store)
+    })
+    .catch(err => {
+      throw Error(err)
+    })
+  console.log('It Worked!')
 }
 
 // this is my export to play with
